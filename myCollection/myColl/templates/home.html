@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Collection</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        .left {background-color:#EEEEEE;
+               height:50%;
+               width:50%;
+               float:left}
+
+        .right {background-color:#EEEEEE;
+                height:50%;
+                width:50%;
+                float:right}
+    </style>
+</head>
+<body>
+    <div>
+        <input type="button" onclick="appendText()" value="Loading">
+    </div>
+
+    <div id="wal-mart" class="left">
+        <h1>Wal Mart</h1>
+    </div>
+
+    <div id="yuan"  class="right">
+        <h1>Yuan Guest</h1>
+    </div>
+
+    <div id="test"  class="left">
+        <h1>Test</h1>
+    </div>
+
+    <div id="tool"  class="right">
+        <h1>Tool</h1>
+    </div>
+</body>
+<script>
+    String.prototype.signMix= function() {
+        if(arguments.length === 0) return this;
+        var param = arguments[0], str= this;
+        if(typeof(param) === 'object') {
+            for(var key in param)
+                str = str.replace(new RegExp("\\{" + key + "\\}", "g"), param[key]);
+            return str;
+        } else {
+            for(var i = 0; i < arguments.length; i++)
+                str = str.replace(new RegExp("\\{" + i + "\\}", "g"), arguments[i]);
+            return str;
+        }
+    }
+    function load(name) {
+        let xhr = new XMLHttpRequest(),
+            okStatus = document.location.protocol === "file:" ? 0 : 200;
+        xhr.open('GET', name, false);
+        xhr.overrideMimeType("text/html;charset=utf-8");
+        xhr.send(null);
+        return xhr.status === okStatus ? xhr.responseText : null;
+    }
+
+    function appendText(){
+        $("p").remove();
+        let text = load("../static/data/data_url.json");
+        text = JSON.parse(text);
+        var wal_mart = ""
+        for (var i=0;i<text["wal-mart"].length;i++){
+                a = '<a href={url} target="_blank">{name}</a>'.signMix(text["wal-mart"][i]);
+                wal_mart = wal_mart+"<p>"+a+"</p>";
+        }
+        $("#wal-mart").append(wal_mart);
+        var yuan = ""
+        for (var i=0;i<text["yuan-guest"].length;i++){
+                a = '<a href={url} target="_blank">{name}</a>'.signMix(text["yuan-guest"][i]);
+                yuan = yuan+"<p>"+a+"</p>";
+        }
+        $("#yuan").append(yuan);
+        var test = ""
+        for (var i=0;i<text["test"].length;i++){
+                a = '<a href={url} target="_blank">{name}</a>'.signMix(text["test"][i]);
+                test = test+"<p>"+a+"</p>";
+        }
+        $("#test").append(test);
+        var tool = ""
+        for (var i=0;i<text["tool"].length;i++){
+                a = '<a href={url} target="_blank">{name}</a>'.signMix(text["tool"][i]);
+                tool = tool+"<p>"+a+"</p>";
+        }
+        $("#tool").append(tool);
+    }
+
+
+</script>
+</html>

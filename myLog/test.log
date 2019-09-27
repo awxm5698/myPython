@@ -1,0 +1,5 @@
+Thu, 04 Apr 2019 17:05:45 - myLog.py[line:9] - DEBUG: This is a debug message
+Thu, 04 Apr 2019 17:05:45 - myLog.py[line:10] - INFO: This is an info message
+Thu, 04 Apr 2019 17:05:45 - myLog.py[line:11] - WARNING: This is a warning message
+Thu, 04 Apr 2019 17:05:45 - myLog.py[line:12] - ERROR: This is an error message
+Thu, 04 Apr 2019 17:05:45 - myLog.py[line:13] - CRITICAL: This is a critical message

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Web page</title>
+</head>
+<body>
+<ul id="navigation">
+    {% for item in navigation %}
+    <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
+    {% endfor %}
+    {% for item in navigation %}
+    <li>{{ item }}</li>
+    {% endfor %}
+</ul>
+
+<h1>My Web page</h1>
+{{ a_variable }}
+
+{# a comment #}
+</body>
+</html>

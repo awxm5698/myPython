@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block body %}
+{% if session.logged_in %}
+<form action="{{ url_for('add_user') }}" method=post class=add-entry>
+    <dl>
+        <dt>Login Name:
+        <dd><input type=text size=30 name=name>
+        <dt>Password:
+        <dd><input type=text size=30 name=password>
+        <dd><input type=submit value=Add>
+    </dl>
+</form>
+<form action="{{url_for('delete_user')}}" method="post" class="add-entry">
+    <dl>
+        <dt>Login Name:
+        <dd><input type=text size=30 name=name>
+        <dd><input type=submit value=Deleted>
+    </dl>
+</form>
+{% endif %}
+<ul class=entries>
+    {% for u in user %}
+    <li><h2 id="{{ u.id }}">{{ u.id }}||{{ u.name }}||{{ u.password}}</h2>
+        {% else %}
+    <li><em>Unbelievable.  No user here so far</em>
+        {% endfor %}
+</ul>
+<ul class=entries>
+    {% for sta in status %}
+    <li><h2>{{ sta.name }}</h2>
+        {% else %}
+    <li><em>Unbelievable.  No status here so far</em>
+        {% endfor %}
+</ul>
+{% endblock %}

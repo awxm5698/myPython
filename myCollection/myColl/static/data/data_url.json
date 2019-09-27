@@ -1,0 +1,46 @@
+{
+  "wal-mart":[
+    {"name":"Jenkins",
+      "url":"http://10.14.147.22:8080/jenkins/job/ScoreApiTest/"},
+    {"name":"Confluence",
+      "url":"https://confluence.walmart.com/display/SAOCE/Search+Data+Ingestion+Document"},
+    {"name":"Github",
+      "url":"https://gecgithub01.walmart.com/"},
+    {"name":"JIRA",
+      "url":"https://jira.walmart.com/secure/RapidBoard.jspa?rapidView=11144&projectKey=SAOCE"}
+  ],
+  "yuan-guest":[
+    {"name":"Apk Address",
+      "url":"http://172.16.16.201/apk/oce/score-mobile-app/"},
+    {"name":"Jenkins",
+      "url":"http://util.yuanhengtech.cn/jenkins"},
+    {"name":"Wiki",
+      "url":"http://wiki.yuanhengtech.cn/display/QA/QA+Team"},
+    {"name":"Zeplin",
+      "url":"https://app.zeplin.io/project"}
+  ],
+  "tool":[
+    {"name":"百度翻译",
+      "url":"https://fanyi.baidu.com/?aldtype=16047#auto/zh"},
+    {"name":"谷歌翻译",
+      "url":"https://translate.google.cn/"},
+    {"name":"菜鸟教程-正则表达式",
+      "url":"http://www.runoob.com/regexp/regexp-metachar.html"},
+    {"name":"Json格式化",
+      "url":"http://www.bejson.com/"},
+    {"name":"Python参考文档-w3cschool",
+      "url":"https://www.w3cschool.cn/python/dict"}
+  ],
+  "test":[
+    {"name":"Robotframework",
+      "url":"http://robotframework.org/robotframework/#standard-libraries"},
+    {"name":"w3cschool",
+      "url":"https://www.w3cschool.cn/"},
+    {"name":"人工智能",
+      "url":"https://blog.csdn.net/qq_27297393/article/details/80685474"},
+    {"name":"Github",
+      "url":"https://github.com/awxm5698"},
+    {"name":"Numpy",
+      "url":"https://www.numpy.org.cn/article/basics/understanding_numpy.html"}
+  ]
+}
